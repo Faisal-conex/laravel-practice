@@ -3,3 +3,43 @@ Find all controllers in App>Http>Controllers
 php artisan make:controller welcome
 
 
+//controllers
+//contoller syntax Route:get("path", "controlelr file");
+//so on the users path the Users.php file in the controller will be triggered
+Route::get("users", [Users::class, 'index']);
+
+
+
+
+
+
+
+
+On the controllers we can have
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class Users extends Controller
+{
+    //
+    
+    public function index($user){
+        return [ 'name' => 'faisal', 'age' => 26];
+    }
+       
+
+}
+
+
+
+
+
+
+
+
+

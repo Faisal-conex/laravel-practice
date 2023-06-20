@@ -8,9 +8,15 @@ class Users extends Controller
 {
     //
     
-    public function index(){
-        echo "Hello from the controller";
+    public function index($user){
+        return [ 'name' => 'faisal', 'age' => 26];
     }
-       
     
+    
+    public function loadView($user){
+        return view("contact", ['user' => $user]); 
+
+    }
+    
+
 }

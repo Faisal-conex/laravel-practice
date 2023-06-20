@@ -43,9 +43,17 @@ Route::view("contact", "contact");
 
 //controllers
 //contoller syntax Route:get("path", "controlelr file");
+//so on the users path the Users.php file in the controller will be triggered
 
-Route::get("users", [Users::class, 'index']);
+//Route::get("users", [Users::class, 'index']);
 
+//we can also pass parameters
+//Route::get("users/{user}", [Users::class, 'index']);
+
+
+//pass value to controller which opens the view
+// the user var will automatically be passed in loadView function within our controller
+Route::get("users/{user}", [Users::class, 'loadView']);
 
 
 
