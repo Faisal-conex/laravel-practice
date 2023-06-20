@@ -1,0 +1,5 @@
+Find all controllers in App>Http>Controllers
+
+php artisan make:controller welcome
+
+

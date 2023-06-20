@@ -1,0 +1,177 @@
+Where we write 
+
+HTML:
+Model:
+Controller:
+Routing:
+File Store:
+Config:
+Database:
+
+app 
+>console>kernel.php
+   runs console commands like "PHP artisan serve"
+
+>exceptions
+   handles exceptions
+   
+>>Http
+   >Controllers
+      handles controllers which acts as an intermediary between view and Model
+   
+   >Middleware
+      handles all middleware activites to ensure security such as auth
+      
+>>Models
+   Database connections to the specific database such as user.php relates to the user table
+
+>Providers
+   Authentication and custom services here
+____________________________________________________________________________
+
+
+Bootstrap
+   We never make any kind of chagne here as thsi file is responsivble for bootstrapping our application
+   
+   >cache
+      caches our project and files
+      
+____________________________________________________________________________   
+      
+      
+      
+Config  
+   all configuratins are preseent here
+
+
+____________________________________________________________________________   
+
+
+Database
+   Factories
+   
+   Migrations
+      >Migrate the table from one database to another database and we can use this to share databases between users
+   
+   Seeders
+      >Fake data upload
+
+   
+____________________________________________________________________________   
+
+
+
+Public
+
+   >index.php
+      is the first file and is the first loaded file 
+      
+      
+
+____________________________________________________________________________   
+
+
+Resources
+
+   >css >js >lang
+      standard langauge tools
+      
+   >views
+      Has our VIEW and consists of blade files
+      
+   >routes
+      Is responsible for routes
+
+
+   >storage
+      Is responisble for saving files
+
+    >vendor
+      Has dependacny that is loaded by json
+      
+      
+____________________________________________________________________________   
+    
+    .env
+      environment variables
+      
+    artisan
+      command line
+      
+    composer.json
+      has all our pacakages and dependencies
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
