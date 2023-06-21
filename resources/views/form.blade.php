@@ -29,7 +29,10 @@
                         {{ $message }}
                     @enderror</span>
             </div>
-            <button type="submit"> Submit post</button>
+            <div class='button-container' >
+                <button type="submit"> Submit post</button>
+            </div>
+            
 
             {{-- @if ($errors->any())
                 <div>
@@ -67,5 +70,30 @@
     .error{
         color: red;
         gap : 0;
+    }
+    
+    .button-container{
+        display : flex;
+        width:100%;
+        justify-content : flex-end;
+        align-items : flex-end;
+    }
+    
+    button{
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        width: 120px;
+        height : 40px;
+        background-color : black;
+        color : rgb(100, 100, 201);
+        font-weight : 700;
+        
+    }
+    
+    button:hover{
+        color : rgb(60, 100, 140);
+        transform:scale(1.05);
+        cursor : pointer;
     }
 </style>
