@@ -8,11 +8,12 @@
 </head>
 
 <body>
+    <x-header />
     <div id="app">
         <h1>Welcome </h1>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
     </div>
+
+    <x-footer name="welcome" />
 
 
 </body>

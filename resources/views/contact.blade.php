@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <x-header />
+
     <div id="app">
         <h1 class=''>
             @if (isset($user))
@@ -22,9 +24,10 @@
         </p>
 
 
-        <form class='' action="{{ URL::to('/save_data') }}" method="post" style="display: flex; flex-direction : ">
+        <form class='' action="{{ URL::to('/save_data') }}" method="post"
+            style="display: flex; flex-direction : column; gap: 3rem;">
             <input type="text" placeholder="username" />
-            <textarea type="text" placeholder="comment" />
+            <textarea name="userinfo" placeholder="comment" rows="18"> </textarea>
         </form>
 
 
@@ -44,7 +47,7 @@
 
 
     </div>
-
+    <x-footer name="contact" />
 </body>
 
 </html>

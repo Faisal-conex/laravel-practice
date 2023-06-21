@@ -1,0 +1,24 @@
+We can use @include('viewname'); to add another view to our current page
+
+
+We can use script tags in view
+   
+    {{ $users }} //is a variable within the template
+   
+   <script >
+      var data= @json($users);
+      console.log(data);
+   </script>
+
+
+@csrf
+generates a token and we can use it to authenticate user by knowing if its a request from within our site or not
+
+We can apply style with the style tags
+
+
+
+
+
+
+

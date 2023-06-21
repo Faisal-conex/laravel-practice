@@ -1,0 +1,23 @@
+@if(user == "someUser")
+
+@elseif((user == "someOhterUser")
+
+@else 
+
+@endif
+
+
+
+
+@for($i = 0; $i< 10; $i++)
+ <h1>$i</h1>
+@endfor
+
+
+
+$datas = [some array]
+
+
+@foreach($datas as $data )
+   <h1> $data <h1/>
+@endforeach

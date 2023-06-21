@@ -8,9 +8,12 @@
 </head>
 
 <body>
+    <x-header />
     <div id="app">
         about.blade
     </div>
+    <x-footer name="about" />
+
 
 </body>
 

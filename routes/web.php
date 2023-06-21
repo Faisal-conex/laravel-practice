@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 
@@ -36,10 +38,12 @@ Route::get('/', function () {
 //shorthand  /path, view
 Route::view("about", "about");
 Route::view("contact", "contact");
-
-
-
-
+Route::view("profile", "profile");
+Route::get("create-post", function(){
+    return view("form");
+});
+Route::view("login", "login");
+Route::view("noaccess", "noaccess");
 
 //controllers
 //contoller syntax Route:get("path", "controlelr file");
@@ -54,6 +58,8 @@ Route::view("contact", "contact");
 //pass value to controller which opens the view
 // the user var will automatically be passed in loadView function within our controller
 Route::get("users/{user}", [Users::class, 'loadView']);
+Route::get("profile/{user}", [ProfileController::class, 'init']);
+Route::post("form-controller", [PostController::class, 'getData']);
 
 
 
@@ -62,8 +68,7 @@ Route::get("users/{user}", [Users::class, 'loadView']);
 
 
 
-
-
+         
 
 
 
