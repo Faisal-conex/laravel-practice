@@ -47,6 +47,8 @@ Route::get("create-post", function(){
 Route::view("login", "login"); 
 Route::view("noaccess", "noaccess");
 
+//hello;
+
 //controllers
 //contoller syntax Route:get("path", "controlelr file");
 //so on the users path the Users.php file in the controller will be triggered
