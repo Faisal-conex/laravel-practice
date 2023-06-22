@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LoginChecker
+class ageChecker
 {
     /**
      * Handle an incoming request.
@@ -14,8 +14,7 @@ class LoginChecker
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {
-        if($request->age && $request->age >= 150){
+    { if($request->age && $request->age <= 12){
             return redirect('noaccess');
         }
         return $next($request);

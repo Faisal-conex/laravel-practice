@@ -9,7 +9,7 @@
     <div id="app">
       <h1>You cannot excess this page</h1>
       
-      <button href="/"> Back to home</button>
+      <button > <a href="/">Back to home </a></button>
    </div>
     
 
@@ -19,7 +19,7 @@
 <style lang="css">
    body{
       background-color: #000000;
-      color: yellow;
+      color: rgb(250,200,200);
       display : flex;
       flex-direction : column;
       justify-content : center;
@@ -31,6 +31,8 @@
       flex-direction : column;
       justify-content : center;
       align-items : center;
+      height : 100vh;
+      max-height : 100%;
       
       
    }

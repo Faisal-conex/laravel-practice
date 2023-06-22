@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +44,7 @@ Route::view("profile", "profile");
 Route::get("create-post", function(){
     return view("form");
 });
-Route::view("login", "login");
+Route::view("login", "login"); 
 Route::view("noaccess", "noaccess");
 
 //controllers
@@ -63,12 +65,21 @@ Route::post("form-controller", [PostController::class, 'getData']);
 
 
 
+//middleware groups 
+
+Route::group(["middleware" => ["protectedPage_ageChecker"]], function(){
+    Route::view("login", "login");
+    Route::view("create-post", "form");
+});
 
 
-
-
-
+//single middleware
+Route::view("admin", "admin")->middleware(['admin.checker']);
          
+
+
+//Database connection
+Route::get("users", [UserController::class, 'index']);
 
 
 

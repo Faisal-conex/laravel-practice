@@ -12,6 +12,10 @@ class ProfileController extends Controller
     
         $posts = ["A time in the winter", "A time in the summer", "In pakistan", "In a place far aawy"];
         
+        if($user == 'admin'){
+            return redirect("admin");
+        }
+        
         return view("profile", ["firstname"=>$user, "posts" => $posts]);
     }
     

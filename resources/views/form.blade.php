@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div id="app">
         <x-header />
+
+    <div id="app">
         <form action="form-controller" method="POST">
             @csrf
             <h1>Post Information </h1>
@@ -43,7 +44,7 @@
                     @endforeach
                 </ul>
                 </div>
-                
+               
             @endif --}}
         </form>
     </div>

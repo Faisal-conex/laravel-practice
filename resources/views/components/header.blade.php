@@ -26,6 +26,8 @@
     
         color : rgb(0,0,0);
         text-decoration : none;
+        width : min-content;
+        height: min-content;
     }
     a:hover{
         color:white;

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LoginChecker
+class checkAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class LoginChecker
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->age && $request->age >= 150){
-            return redirect('noaccess');
+        if($request->admin && $request->admin == 'false'){
+            return redirect("noaccess");
         }
         return $next($request);
     }
