@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -60,7 +61,7 @@ Route::view("noaccess", "noaccess");
 
 
 //pass value to controller which opens the view
-// the user var will automatically be passed in loadView function within our controller
+// the user var wills automatically be passed in loadView function within our controller
 Route::get("users/{user}", [Users::class, 'loadView']);
 Route::get("profile/{user}", [ProfileController::class, 'init']);
 Route::post("form-controller", [PostController::class, 'getData']);
@@ -81,7 +82,7 @@ Route::view("admin", "admin")->middleware(['admin.checker']);
 
 
 //Database connection
-Route::get("users", [UserController::class, 'index']);
+Route::get("database", [DatabaseController::class, 'index']);
 
 
 
