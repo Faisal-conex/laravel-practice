@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\APIController;
+use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -41,11 +43,12 @@ Route::get('/', function () {
 Route::view("about", "about");
 Route::view("contact", "contact");
 Route::view("profile", "profile");
-Route::get("create-post", function(){
+Route::get("create-post", function () {
     return view("form");
 });
-Route::view("login", "login"); 
+Route::view("login", "login");
 Route::view("noaccess", "noaccess");
+Route::view("apiview", "apiview");
 
 //controllers
 //contoller syntax Route:get("path", "controlelr file");
@@ -67,7 +70,7 @@ Route::post("form-controller", [PostController::class, 'getData']);
 
 //middleware groups 
 
-Route::group(["middleware" => ["protectedPage_ageChecker"]], function(){
+Route::group(["middleware" => ["protectedPage_ageChecker"]], function () {
     Route::view("login", "login");
     Route::view("create-post", "form");
 });
@@ -75,14 +78,15 @@ Route::group(["middleware" => ["protectedPage_ageChecker"]], function(){
 
 //single middleware
 Route::view("admin", "admin")->middleware(['admin.checker']);
-         
+
 
 
 //Database connection
-Route::get("users", [UserController::class, 'index']);
+Route::get("users", [UserController::class, 'getData']);
 
+Route::get("database", [DatabaseController::class, 'index']);
 
-
+Route::get("api", [APIController::class, 'getAPI']);
 
 
 
