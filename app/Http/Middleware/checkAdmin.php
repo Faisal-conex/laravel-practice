@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class checkAdmin
 {
+
+
+
     /**
      * Handle an incoming request.
      *
@@ -20,4 +23,5 @@ class checkAdmin
         }
         return $next($request);
     }
+    
 }
