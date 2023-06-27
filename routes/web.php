@@ -10,6 +10,7 @@ use App\Http\Controllers\Users;
 
 
 /*
+@audit : bob
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -50,6 +51,8 @@ Route::view("login", "login");
 Route::view("noaccess", "noaccess");
 Route::view("apiview", "apiview");
 
+//hello;
+
 //controllers
 //contoller syntax Route:get("path", "controlelr file");
 //so on the users path the Users.php file in the controller will be triggered
@@ -61,7 +64,7 @@ Route::view("apiview", "apiview");
 
 
 //pass value to controller which opens the view
-// the user var will automatically be passed in loadView function within our controller
+// the user var wills automatically be passed in loadView function within our controller
 Route::get("users/{user}", [Users::class, 'loadView']);
 Route::get("profile/{user}", [ProfileController::class, 'init']);
 Route::post("form-controller", [PostController::class, 'getData']);
