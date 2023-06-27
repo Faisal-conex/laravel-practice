@@ -1,0 +1,139 @@
+
+use Illuminate\Support\Facades\Http;
+ 
+HTTP client in laravel is synchronous in nature
+ 
+ 
+$response = Http::get('http://example.com');
+
+
+
+
+$response->body() : string;
+$response->json($key = null, $default = null) : array|mixed;
+$response->object() : object;
+$response->collect($key = null) : Illuminate\Support\Collection;
+$response->status() : int;
+$response->successful() : bool;
+$response->redirect(): bool;
+$response->failed() : bool;
+$response->clientError() : bool;
+$response->header($header) : string;
+$response->headers() : array;
+
+
+asynchrounous
+$response = Http::async()->get('https://example.com/api/endpoint')->wait();
+
+
+
+
+$response->ok() : bool;                  // 200 OK
+$response->created() : bool;             // 201 Created
+$response->accepted() : bool;            // 202 Accepted
+$response->noContent() : bool;           // 204 No Content
+$response->movedPermanently() : bool;    // 301 Moved Permanently
+$response->found() : bool;               // 302 Found
+$response->badRequest() : bool;          // 400 Bad Request
+$response->unauthorized() : bool;        // 401 Unauthorized
+$response->paymentRequired() : bool;     // 402 Payment Required
+$response->forbidden() : bool;           // 403 Forbidden
+$response->notFound() : bool;            // 404 Not Found
+$response->requestTimeout() : bool;      // 408 Request Timeout
+$response->conflict() : bool;            // 409 Conflict
+$response->unprocessableEntity() : bool; // 422 Unprocessable Entity
+$response->tooManyRequests() : bool;     // 429 Too Many Requests
+$response->serverError() : bool;         // 500 Internal Server Error
+
+
+
+
+Http::withUrlParameters([
+    'endpoint' => 'https://laravel.com',
+    'page' => 'docs',
+    'version' => '9.x',
+    'topic' => 'validation',
+])->get('{+endpoint}/{page}/{version}/{topic}');
+
+
+
+ 
+$response = Http::post('http://example.com/users', [
+    'name' => 'Steve',
+    'role' => 'Network Administrator',
+]);
+
+
+
+
+//get with query params
+$response = Http::get('http://example.com/users', [
+    'name' => 'Taylor',
+    'page' => 1,
+]);
+
+
+
+//raw equest body
+$response = Http::withBody(
+    base64_encode($photo), 'image/jpeg'
+)->post('http://example.com/photo');
+
+
+
+
+Multi-Part Requests
+If you would like to send files as multi-part requests, you should call the attach method before making your request. This method accepts the name of the file and its contents. If needed, you may provide a third argument which will be considered the file's filename:
+
+$response = Http::attach(
+    'attachment', file_get_contents('photo.jpg'), 'photo.jpg'
+)->post('http://example.com/attachments');
+
+
+
+
+
+//Headers
+$response = Http::withHeaders([
+    'X-First' => 'foo',
+    'X-Second' => 'bar'
+])->post('http://example.com/users', [
+    'name' => 'Taylor',
+]);
+
+
+//standard apis
+await fetch('dfdffd', {
+   method: 'POST',
+   headers : {
+      "Content-Type" : 'application/json',
+      "Authorization" : 'Bearer token123',
+   },
+   body : JSON.stringify({ name:'JHON', age:30 })
+})
+
+
+
+
+
+
+
+#AUTH ON LARAVEL
+
+
+// Basic authentication...
+$response = Http::withBasicAuth('taylor@laravel.com', 'secret')->post(/* ... */);
+ 
+// Digest authentication...
+$response = Http::withDigestAuth('taylor@laravel.com', 'secret')->post(/* ... */);
+
+
+$response = Http::withToken('token')->post(/* ... */);
+
+
+
+//by default it is 30 seconds
+$response = Http::timeout(3)->get(/* ... */);
+
+
+

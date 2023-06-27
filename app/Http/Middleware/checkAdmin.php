@@ -8,9 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class checkAdmin
 {
+
+
+
     /**
      * Handle an incoming request.
-     *
+     *b
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
@@ -20,4 +23,5 @@ class checkAdmin
         }
         return $next($request);
     }
+    
 }
